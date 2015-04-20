@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -53,6 +54,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Generics\RelayCommand.cs" />
+    <Compile Include="Commands\Normal\RelayCommand.cs" />
+    <Compile Include="Media\Classes\PlayList.cs" />
+    <Compile Include="Media\Classes\Song.cs" />
+    <Compile Include="Media\Classes\SoundManager.cs" />
+    <Compile Include="Model\GridCreator.cs" />
+    <Compile Include="UserControls\PlayTurnChangeControl.xaml.cs">
+      <DependentUpon>PlayTurnChangeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TurnPlayedList.xaml.cs">
+      <DependentUpon>TurnPlayedList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\GameViewModel.cs" />
+    <Compile Include="View\AboutStuff\AboutControl.xaml.cs">
+      <DependentUpon>AboutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AboutStuff\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,6 +88,38 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\GridStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LayoutStatistieken.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ScoreStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\PlayTurnChangeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TurnPlayedList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AboutStuff\AboutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AboutStuff\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -94,23 +149,44 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Model\" />
-    <Folder Include="Styles\" />
+    <Folder Include="Media\Sounds\LostSong\" />
     <Folder Include="TextFiles\" />
-    <Folder Include="UserControls\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reversi.Logic\Reversi.Logic.csproj">
       <Project>{fa0b7790-d7c9-4a99-a513-2e2781f30801}</Project>
       <Name>Reversi.Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Reversi.Media\Reversi.Media.csproj">
-      <Project>{5eefb159-2e54-4bdf-8058-5067bf360706}</Project>
-      <Name>Reversi.Media</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\Images\1353183085_save.png" />
+    <Resource Include="Media\Images\add.png" />
+    <Resource Include="Media\Images\copy.png" />
+    <Resource Include="Media\Images\cut.png" />
+    <Resource Include="Media\Images\format_painter.png" />
+    <Resource Include="Media\Images\go-next.png" />
+    <Resource Include="Media\Images\go-previous.png" />
+    <Resource Include="Media\Images\help.png" />
+    <Resource Include="Media\Images\home.png" />
+    <Resource Include="Media\Images\options.png" />
+    <Resource Include="Media\Images\paste.png" />
+    <Resource Include="Media\Images\personal.png" />
+    <Resource Include="Media\Images\quit.png" />
+    <Resource Include="Media\Images\redo.png" />
+    <Resource Include="Media\Images\save.png" />
+    <Resource Include="Media\Images\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Media\Sounds\Songs\02TumblingDice%28Live%29.m4a" />
+    <Content Include="Media\Sounds\Songs\05AnotherOneBitestheDust_1.m4a" />
+    <Content Include="Media\Sounds\Songs\82 Broodje Bakpao.mp3" />
+    <Content Include="Media\Sounds\Songs\AnotherOneBitestheDust.mp3" />
+    <Content Include="Media\Sounds\Songs\Another_One_Bites_the_Dust.mp3" />
+    <Content Include="Media\Sounds\Songs\RequiemForADreamOriginalSong.m4a" />
+    <Content Include="Media\Sounds\Songs\TheDarkKnightRises%28MainTheme%29.m4a" />
+    <Content Include="Media\Sounds\Songs\WeAreTheChampions.wav" />
+    <Content Include="Media\Sounds\VictorySong\WeAreTheChampions.mp3" />
+    <Content Include="Media\Sounds\VictorySong\WeAreTheChampions.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

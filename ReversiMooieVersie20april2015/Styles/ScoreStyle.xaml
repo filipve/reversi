@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="ScoreDataTemplate">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Ellipse Grid.Column="0"
+                     Width="20"
+                     Height="20"
+                     Stroke="Black"
+                     StrokeThickness="1">
+                <Ellipse.Fill>
+                    <SolidColorBrush Color="{Binding Key.TokenColor}" />
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label Grid.Column="1" Content="{Binding Key.Name}" />
+            <Label Grid.Column="2" Content="{Binding Value.Score}" />
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

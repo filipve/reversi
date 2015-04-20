@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReversiMooieVersie20april20
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reversi.Logic", "Reversi.Logic\Reversi.Logic.csproj", "{FA0B7790-D7C9-4A99-A513-2E2781F30801}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reversi.Media", "Reversi.Media\Reversi.Media.csproj", "{5EEFB159-2E54-4BDF-8058-5067BF360706}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{FA0B7790-D7C9-4A99-A513-2E2781F30801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA0B7790-D7C9-4A99-A513-2E2781F30801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA0B7790-D7C9-4A99-A513-2E2781F30801}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EEFB159-2E54-4BDF-8058-5067BF360706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EEFB159-2E54-4BDF-8058-5067BF360706}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EEFB159-2E54-4BDF-8058-5067BF360706}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EEFB159-2E54-4BDF-8058-5067BF360706}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

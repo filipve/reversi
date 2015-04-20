@@ -1,8 +1,74 @@
 ﻿<Window x:Class="ReversiMooieVersie20april2015.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:controls="clr-namespace:ReversiMooieVersie20april2015"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:my="clr-namespace:ReversiMooieVersie20april2015.UserControls"
+              xmlns:rev="clr-namespace:ReversiMooieVersie20april2015.ViewModel"
+        Title="Reversi"
+        Width="758"
+        Height="525"
+        DataContext="{DynamicResource ResourceKey=vm}">
+    <Window.Resources>
+        <rev:GameViewModel x:Key="vm" />
+    </Window.Resources>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File" />
+        </Menu>
+
+        <DockPanel DockPanel.Dock="Bottom">
+            <StatusBar MinHeight="15"
+                       DockPanel.Dock="Bottom"
+                       ItemTemplate="{StaticResource ScoreDataTemplate}"
+                       ItemsSource="{Binding Game.ScoreBoard}" />
+
+            <DockPanel DockPanel.Dock="Right">
+
+                <ScrollViewer Width="275"
+                              HorizontalAlignment="Stretch"
+                              Background="White"
+                              DockPanel.Dock="Right"
+                              KeyboardNavigation.IsTabStop="False"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              Visibility="{Binding SidePanelVisibility}">
+                    <my:TurnPlayedList DataContext="{Binding SnapshotContainer}"
+                                       KeyboardNavigation.ControlTabNavigation="None"
+                                       KeyboardNavigation.DirectionalNavigation="None"
+                                       KeyboardNavigation.IsTabStop="False" />
+                </ScrollViewer>
+
+                <!--
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="331" />
+            </Grid.ColumnDefinitions>-->
+                <!--<Viewbox Width="auto"
+                         Margin="10"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         DataContext="{DynamicResource ResourceKey=vm}"
+                         Stretch="Uniform">-->
+                <Viewbox Width="auto"
+                         Margin="10"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Stretch="Uniform">
+                    <!--  GameGridBorder staat in Style/GridStyle.xaml beschreven  -->
+                    <Border Style="{StaticResource GameGridBorder}">
+                        <!--  gelinkt aan de gedeclareerde GameViewModel game in Mainwindow code  -->
+                        <Grid Name="g" DataContext="{Binding Game}" />
+                    </Border>
+                </Viewbox>
+
+
+
+
+                <!-- </Grid> -->
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
 </Window>
