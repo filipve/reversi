@@ -39,12 +39,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Coord.cs" />
+    <Compile Include="Classes\OffsetCalculator.cs" />
+    <Compile Include="Classes\SnapshotContainer.cs" />
+    <Compile Include="Classes\SpiralCoordEnumerator.cs" />
+    <Compile Include="Common\Board.cs" />
+    <Compile Include="Common\BoardGame.cs" />
+    <Compile Include="Common\Player.cs" />
+    <Compile Include="Common\PlayerQueue.cs" />
+    <Compile Include="Common\PlayerScore.cs" />
+    <Compile Include="Common\RevGame.cs" />
+    <Compile Include="Common\Scoreboard.cs" />
+    <Compile Include="Common\Turn.cs" />
+    <Compile Include="Enumerations\Token.cs" />
+    <Compile Include="Interfaces\IPlayerQueue.cs" />
+    <Compile Include="Interfaces\ISnapshotContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Classes\" />
-    <Folder Include="Common\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\Reversi.Media\Reversi.Media.csproj">
+      <Project>{5eefb159-2e54-4bdf-8058-5067bf360706}</Project>
+      <Name>Reversi.Media</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

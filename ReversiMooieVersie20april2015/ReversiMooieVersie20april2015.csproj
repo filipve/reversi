@@ -102,6 +102,16 @@
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reversi.Logic\Reversi.Logic.csproj">
+      <Project>{fa0b7790-d7c9-4a99-a513-2e2781f30801}</Project>
+      <Name>Reversi.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reversi.Media\Reversi.Media.csproj">
+      <Project>{5eefb159-2e54-4bdf-8058-5067bf360706}</Project>
+      <Name>Reversi.Media</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
